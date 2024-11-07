@@ -68,3 +68,16 @@ ESP или любой другой платы с прошивкой MicroPython 
 # Среда разработки (IDE)
 ## IDE
 ![alt text](https://github.com/octaprog7/mpyDAC/blob/master/pics/ide_4725.png)
+
+# 07.11.2024. Добавил поддержку SPI ЦАП TCL5615.
+Импортируйте TCL5615mod.py и работайте с ним. 
+Чтобы включить демонстрацию работы с TCL5615, установите main.tlc5615 в True.
+
+## Источник опорного напряжения
+К сожалению, на моей плате с TCL5615, ИОН выдает напряжение 2.51 Вольта, при напряжении питания TCL5615 в 4.7 Вольта. 
+Напряжение ИОН не должно превышать Vcc/2 - 0.4. То есть при Vcc = 5 В, Vref <= 2.1 В.
+
+## Плата с TLC5615
+![alt text](https://github.com/octaprog7/mpyDAC/blob/master/pics/board_5615.jpg)
+## Raspberry Pi Pico RP2040 + TLC5615
+![alt text](https://github.com/octaprog7/mpyDAC/blob/master/pics/pico_plus_5615.jpg)

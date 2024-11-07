@@ -110,4 +110,11 @@ class MCP4725(DeviceEx, DAC):
 
     def __call__(self, value: [int, float]):
         """для удобства использования"""
+        self.set_output(value)
+
+    def set_output(self, value: [int, float]) -> [None, bytes]:
+        """записывает в выходной регистр ЦАП значение.
+        Если значение имеет тип int, то будет записано сырое значение, которое должно быть в диапазоне get_out_range!
+        Если значение имеет тип float (0.0 .. 100.0 %) то в выходной регистр будет записано сырое значение,
+        соответствующее value в % от get_out_range.stop - 1."""
         self.set_status(out=value, power_mode=0, save=False)

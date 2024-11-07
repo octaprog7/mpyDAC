@@ -104,6 +104,15 @@ class DeviceEx(Device):
         byte_order = self._get_byteorder_as_str()[0]
         return self.adapter.write_register(self.address, reg_addr, value, bytes_count, byte_order)
 
+    def read_reg_16(self, address: int, signed: bool = False) -> int:
+        """Чтение регистра разрядностью 16 бит"""
+        _raw = self.read_reg(address, 2)
+        return self.unpack("h" if signed else "H", _raw)[0]
+
+    def write_reg_16(self, address: int, value: int):
+        """Запись регистра разрядностью 16 бит"""
+        self.write_reg(address, value, 2)
+
     def read(self, n_bytes: int) -> bytes:
         """Читает из устройства n_bytes байт. Добавил 25.01.2024"""
         return self.adapter.read(self.address, n_bytes)
