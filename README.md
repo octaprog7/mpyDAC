@@ -69,7 +69,7 @@ ESP или любой другой платы с прошивкой MicroPython 
 ## IDE
 ![alt text](https://github.com/octaprog7/mpyDAC/blob/master/pics/ide_4725.png)
 
-# 07.11.2024. Добавил поддержку SPI ЦАП TCL5615.
+# 07.11.2024. Добавил поддержку SPI ЦАП TCL5615 (модуль TLC5615mod.py).
 Импортируйте TCL5615mod.py и работайте с ним. 
 Чтобы включить демонстрацию работы с TCL5615, установите main.tlc5615 в True.
 
